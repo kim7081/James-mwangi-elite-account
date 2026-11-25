@@ -1,0 +1,491 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#081426">
+<title>Elite Company | Payment Information</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #081426;
+    color: #f5f8fc;
+    padding: 22px 14px;
+}
+
+.container {
+    max-width: 720px;
+    margin: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5px;
+    border-bottom: 1px solid #293b52;
+    margin-bottom: 24px;
+}
+
+.brand {
+    color: #00dfa0;
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.department {
+    color: #9aadc1;
+    font-size: 11px;
+    margin-top: 7px;
+}
+
+.reference {
+    text-align: right;
+    font-size: 11px;
+    color: #9aadc1;
+    line-height: 1.8;
+}
+
+.card {
+    background: #112139;
+    border: 1px solid #293f59;
+    border-radius: 14px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.topline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 23px;
+}
+
+.label {
+    font-size: 12px;
+    color: #a9bacd;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.status {
+    background: #183e35;
+    color: #70e6b8;
+    border: 1px solid #286b55;
+    padding: 8px 12px;
+    border-radius: 30px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 26px;
+    margin-bottom: 13px;
+}
+
+.intro {
+    color: #b7c6d8;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.amount-panel {
+    background: linear-gradient(135deg,#103331,#10283c);
+    border: 1px solid #28634f;
+    border-radius: 12px;
+    padding: 26px 15px;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.amount-title {
+    color: #b5c9c5;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.amount {
+    color: #00e5a0;
+    font-size: 37px;
+    font-weight: 900;
+    margin-top: 12px;
+}
+
+.section-title {
+    font-size: 16px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #293f59;
+    margin-bottom: 12px;
+}
+
+.detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #293b50;
+    font-size: 13px;
+}
+
+.detail:last-child {
+    border-bottom: none;
+}
+
+.detail-name {
+    color: #a9bacd;
+}
+
+.detail-value {
+    text-align: right;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+.green {
+    color: #64e8b6;
+}
+
+.orange {
+    color: #ffd078;
+}
+
+.phone-box {
+    background: #0b1b2d;
+    border: 1px solid #285344;
+    border-radius: 11px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 18px;
+}
+
+.phone-label {
+    color: #9aadc1;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.phone-number {
+    color: #00e5a0;
+    font-size: 27px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.network {
+    color: #b5c6d6;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.notice {
+    background: #30291e;
+    border: 1px solid #66552f;
+    border-radius: 10px;
+    padding: 18px;
+    margin-top: 20px;
+}
+
+.notice h3 {
+    color: #ffd078;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.notice p {
+    color: #e3d9c8;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.next-step {
+    background: #0b1b2d;
+    border-left: 3px solid #00dfa0;
+    border-radius: 8px;
+    padding: 18px;
+    margin-top: 20px;
+}
+
+.next-step h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.next-step p {
+    color: #b7c6d8;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.print-button {
+    width: 100%;
+    border: none;
+    background: #00d994;
+    color: #071b15;
+    padding: 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 23px;
+    cursor: pointer;
+}
+
+.print-button:hover {
+    background: #48efb8;
+}
+
+.footer {
+    text-align: center;
+    color: #8498ae;
+    font-size: 11px;
+    line-height: 1.9;
+    padding: 20px 10px;
+}
+
+.footer strong {
+    color: #00dfa0;
+    letter-spacing: 1px;
+}
+
+@media(max-width:480px) {
+    .brand {font-size: 20px;}
+    .card {padding: 19px;}
+    h1 {font-size: 23px;}
+    .amount {font-size: 31px;}
+    .phone-number {font-size: 24px;}
+    .reference {font-size: 9px;}
+}
+
+@media print {
+    body {
+        background: white;
+        color: #111;
+    }
+    .card {
+        background: white;
+        color: #111;
+        border: 1px solid #ccc;
+        break-inside: avoid;
+    }
+    .intro, .detail-name, .next-step p,
+    .notice p, .footer {
+        color: #444;
+    }
+    .print-button {
+        display: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header class="header">
+    <div>
+        <div class="brand">ELITE COMPANY</div>
+        <div class="department">
+            FINANCE & PAYMENTS DEPARTMENT
+        </div>
+    </div>
+
+    <div class="reference">
+        PAYMENT INFORMATION<br>
+        2026
+    </div>
+</header>
+
+<main>
+
+<section class="card">
+
+    <div class="topline">
+        <span class="label">WINNING PAYMENT UPDATE</span>
+        <span class="status">INFORMATION RECEIVED</span>
+    </div>
+
+    <h1>Dear James Mwangi,</h1>
+
+    <p class="intro">
+        We are pleased to provide an update regarding
+        your recorded winning funds under your Elite
+        Company account. Your submitted payment and
+        transfer information has been received for
+        final verification.
+    </p>
+
+    <div class="amount-panel">
+        <div class="amount-title">
+            RECORDED WINNING FUNDS
+        </div>
+        <div class="amount">KSh 245,000+</div>
+    </div>
+
+</section>
+
+<section class="card">
+
+    <h2 class="section-title">
+        01. Account Information
+    </h2>
+
+    <div class="detail">
+        <span class="detail-name">Account Holder</span>
+        <span class="detail-value">James Mwangi</span>
+    </div>
+
+    <div class="detail">
+        <span class="detail-name">Company</span>
+        <span class="detail-value">Elite Company</span>
+    </div>
+
+    <div class="detail">
+        <span class="detail-name">Currency</span>
+        <span class="detail-value">Kenyan Shillings (KES)</span>
+    </div>
+
+    <div class="detail">
+        <span class="detail-name">Recorded Amount</span>
+        <span class="detail-value green">KSh 245,000+</span>
+    </div>
+
+</section>
+
+<section class="card">
+
+    <h2 class="section-title">
+        02. Payment Verification
+    </h2>
+
+    <div class="detail">
+        <span class="detail-name">Payment Information</span>
+        <span class="detail-value green">Received</span>
+    </div>
+
+    <div class="detail">
+        <span class="detail-name">Transfer Information</span>
+        <span class="detail-value orange">Under Review</span>
+    </div>
+
+    <div class="detail">
+        <span class="detail-name">Final Disbursement</span>
+        <span class="detail-value orange">Not Confirmed</span>
+    </div>
+
+</section>
+
+<section class="card">
+
+    <h2 class="section-title">
+        03. Proposed Company Charge
+    </h2>
+
+    <div class="detail">
+        <span class="detail-name">Proposed Tax / Charge</span>
+        <span class="detail-value orange">KSh 1,340</span>
+    </div>
+
+    <div class="notice">
+        <h3>Important Financial Notice</h3>
+        <p>
+            Any proposed tax or administrative charge
+            must be supported by an official assessment,
+            applicable tax documentation and a verifiable
+            payment reference. Verify the charge before
+            making any payment.
+        </p>
+    </div>
+
+</section>
+
+<section class="card">
+
+    <h2 class="section-title">
+        04. Proposed Recipient Details
+    </h2>
+
+    <div class="detail">
+        <span class="detail-name">Recipient</span>
+        <span class="detail-value">James Mwangi</span>
+    </div>
+
+    <div class="detail">
+        <span class="detail-name">Mobile Network</span>
+        <span class="detail-value green">Safaricom</span>
+    </div>
+
+    <div class="phone-box">
+        <div class="phone-label">
+            PROPOSED M-PESA DESTINATION
+        </div>
+
+        <div class="phone-number">
+            0722430322
+        </div>
+
+        <div class="network">
+            Safaricom Mobile Money
+        </div>
+    </div>
+
+    <div class="notice">
+        <h3>Destination Verification</h3>
+        <p>
+            The above number is the proposed recipient
+            destination. Confirm ownership and authorization
+            before initiating a transfer. Its inclusion
+            does not confirm receipt or release of funds.
+        </p>
+    </div>
+
+</section>
+
+<section class="card">
+
+    <h2 class="section-title">
+        05. Next Steps
+    </h2>
+
+    <div class="next-step">
+        <h3>Final Verification & Disbursement</h3>
+        <p>
+            Following completion of legitimate verification
+            requirements, the company should communicate
+            the approved transfer method and expected
+            disbursement timeline to James Mwangi.
+        </p>
+    </div>
+
+    <button class="print-button"
+        onclick="window.print()">
+        PRINT PAYMENT INFORMATION
+    </button>
+
+</section>
+
+</main>
+
+<footer class="footer">
+    <strong>ELITE COMPANY</strong><br>
+    Finance & Payments Department<br>
+    © 2026 Elite Company. All Rights Reserved.<br><br>
+    Informational notice only. This document is not
+    proof of funds, a tax invoice, or confirmation
+    of an actual money transfer.
+</footer>
+
+</div>
+
+</body>
+</html>
